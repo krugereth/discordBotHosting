@@ -9,7 +9,7 @@ intents.message_content = True  # NOQA
 client = discord.Client(intents=intents)
 
 
-KAWHI_IMAGE_PATH = "kawhiolympics.jpg"
+KAWHI_IMAGE_PATH = "Kawhiolympics.jpg"
 MIKE_TOMLIN_IMAGE_PATH = "miketomlin.jpg"
 WESTBROOK_IMAGE_PATH = "westbrook.jpg"
 
