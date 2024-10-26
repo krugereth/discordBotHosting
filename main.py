@@ -9,9 +9,9 @@ intents.message_content = True  # NOQA
 client = discord.Client(intents=intents)
 
 
-KAWHI_IMAGE_URL = "https://raw.githubusercontent.com/krugereth/discordHostingBot/master/kawhiolympics.jpg"
-MIKE_TOMLIN_IMAGE_URL = "https://raw.githubusercontent.com/krugereth/discordHostingBot/master/miketomlin.jpg"
-WESTBROOK_IMAGE_URL = "https://raw.githubusercontent.com/krugereth/discordHostingBot/master/westbrook.jpg"
+KAWHI_IMAGE_PATH = "kawhiolympics.jpg"
+MIKE_TOMLIN_IMAGE_PATH = "miketomlin.jpg"
+WESTBROOK_IMAGE_PATH = "westbrook.jpg"
 
 
 @client.event
@@ -24,21 +24,21 @@ async def on_message(message):
         await message.channel.send("that's me, the toughest hooper in LA! From the tent to the pent!")
 
     if "kawhi" in message.content.lower():
-        await message.channel.send(file=discord.File(fp=KAWHI_IMAGE_URL))
+        await message.channel.send(file=discord.File(KAWHI_IMAGE_PATH))
 
     if "kai jones" in message.content.lower():
         await message.channel.send("Yuh Yuh Yuh Yuh Yuh I got infinity money Yuh Yuh Yuh Yuh Yuh I got infinity money Yuh Yuh Yuh Yuh Yuh I got infinity money")
 
     keywords = {"mike", "tomlin", "steelers"}
     if all(keyword in message.content.lower() for keyword in keywords):
-        await message.channel.send(file=discord.File(fp=MIKE_TOMLIN_IMAGE_URL))
+        await message.channel.send(file=discord.File(MIKE_TOMLIN_IMAGE_PATH))
 
     keywords = {"westbrook", "midrange"}
     if all(keyword in message.content.lower() for keyword in keywords):
-        await message.channel.send(file=discord.File(fp=WESTBROOK_IMAGE_URL))
+        await message.channel.send(file=discord.File(WESTBROOK_IMAGE_PATH))
 
     if "hawad midrange" in message.content.lower():
-        await message.channel.send(file=discord.File(fp=WESTBROOK_IMAGE_URL))
+        await message.channel.send(file=discord.File(WESTBROOK_IMAGE_PATH))
 
     # Check if the message contains a Twitter link
     if "twitter.com" in message.content or "x.com" in message.content:
