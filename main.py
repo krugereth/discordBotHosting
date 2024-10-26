@@ -12,6 +12,7 @@ client = discord.Client(intents=intents)
 KAWHI_IMAGE_PATH = "Kawhiolympics.jpg"
 MIKE_TOMLIN_IMAGE_PATH = "miketomlin.jpg"
 WESTBROOK_IMAGE_PATH = "westbrook.jpg"
+NETS_KG_VIDEO_PATH = "netskg.mp4"
 
 
 @client.event
@@ -36,6 +37,10 @@ async def on_message(message):
     keywords = {"westbrook", "midrange"}
     if all(keyword in message.content.lower() for keyword in keywords):
         await message.channel.send(file=discord.File(WESTBROOK_IMAGE_PATH))
+        
+    keywords = {"nets", "kg"}
+    if all(keyword in message.content.lower() for keyword in keywords):
+        await message.channel.send(file=discord.File(NETS_KG_VIDEO_PATH))
 
     if "hawad midrange" in message.content.lower():
         await message.channel.send(file=discord.File(WESTBROOK_IMAGE_PATH))
